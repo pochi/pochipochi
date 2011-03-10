@@ -1,6 +1,8 @@
 class BookmarksController < ApplicationController
+  before_filter :login_required
+
   def index
-    @bookmarks = Bookmark.page(params[:page])
+    @bookmarks = current_user.bookmarks.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,7 +33,7 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new(params[:bookmark])
+    @bookmark = current_user.bookmarks.build(params[:bookmark])
 
     respond_to do |format|
       if @bookmark.save
