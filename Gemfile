@@ -5,3 +5,5 @@ gem 'rails', '3.0.4'
 gem 'pg'
 gem 'kaminari'
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
