@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :bookmarks
+  has_many :providers
   before_save :encrypt_password
 
   attr_accessor :password
