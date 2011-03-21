@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
   before_filter :login_required
 
   def index
-    @bookmarks = current_user.bookmarks.page(params[:page])
+    @bookmarks = current_user.bookmarks.search(params[:search]).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
