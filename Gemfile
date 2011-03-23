@@ -8,3 +8,5 @@ gem 'kaminari'
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'omniauth'
+
+gem 'json'

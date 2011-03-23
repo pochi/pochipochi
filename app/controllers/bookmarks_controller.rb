@@ -10,7 +10,7 @@ class BookmarksController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bookmarks }
-      format.js   # index.js.erb
+      format.js   { render :json => @bookmarks.to_json }
     end
   end
 
