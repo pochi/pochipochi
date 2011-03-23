@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th><<%= sortable "tag" -%></th>
+    <th><<%= sortable "title" -%></th>
+    <th><<%= sortable "description" -%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
+      <td><%= bookmark.tag %></td>
+      <td><%= link_to bookmark.title, bookmark.url, :target => '_blank' %></td>
+      <td><%= bookmark.description %></td>
+      <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
+      <td><%= link_to 'Destroy', bookmark, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

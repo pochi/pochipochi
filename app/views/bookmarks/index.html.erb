@@ -1,8 +1,10 @@
 <h1>Listing bookmarks</h1>
 
-<% form_tag bookmarks_path, :method => 'get', :id => 'bookmarks_search' do %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= form_tag bookmarks_path, :method => 'get', :id => 'bookmarks_search' do %>
   <p>
-    <%= text_field(:search, params[:serach]) %>
+    <%= text_field_tag(:search, params[:serach]) %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
@@ -10,27 +12,10 @@
 
 <%= paginate @bookmarks -%>
 
-<table>
-  <tr>
-    <th>Tag</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @bookmarks.each do |bookmark| %>
-  <tr>
-    <td><%= bookmark.tag %></td>
-    <td><%= link_to bookmark.title, bookmark.url, :target => '_blank' %></td>
-    <td><%= bookmark.description %></td>
-    <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-    <td><%= link_to 'Destroy', bookmark, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<div id="bookmarks">
+  <%= render "bookmarks" %>
+</div>
 
 <%= link_to 'New Bookmark', new_bookmark_path %>
+
+

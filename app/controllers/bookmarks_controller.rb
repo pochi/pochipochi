@@ -1,12 +1,16 @@
 class BookmarksController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_filter :login_required
 
   def index
-    @bookmarks = current_user.bookmarks.search(params[:search]).page(params[:page])
+    @bookmarks = current_user.bookmarks.search(params[:search]).
+                                        order(sort_column + " " + sort_direction).
+                                        page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bookmarks }
+      format.js   # index.js.erb
     end
   end
 
@@ -68,5 +72,14 @@ class BookmarksController < ApplicationController
       format.html { redirect_to(bookmarks_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+  def sort_column
+    Bookmark.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+
+  def sort_direction
+    %w(asc desc).include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
