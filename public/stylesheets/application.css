@@ -15,12 +15,32 @@ div.user-navi {
   text-align: right;
 }
 
+div.main {
+  margin-top: 10px;
+  border: 8px solid black;
+  -moz-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+  -moz-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+  -moz-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+  -moz-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+  -moz-border-radius: 15px;
+  /* not working -webkit-border-*-colors */
+  -webkit-border-bottom-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+  -webkit-border-top-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+  -webkit-border-right-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+  -webkit-border-left-colors: #555 #666 #777 #888 #999 #aaa #bbb #ccc;
+  -webkit-border-radius: 15px;
+  padding: 5px 5px 5px 15px;
+}
+
 h2.title {
   /* No repeat display background image */
-  background: url('../images/blue.gif') no-repeat scroll 0 0 transparent;
-  height: 47px;
-  width: 254px;
+  /* background: url('../images/blue.gif') no-repeat scroll 0 0 transparent; */
+  /* color: white; */
   padding: 10px;
-  color: white;
+}
+
+tr.bookmark {
+  /* -moz-box-shadow: 10px 10px 5px #888; */
+  text-shadow: 2px 2px 2px #888;
 }
 

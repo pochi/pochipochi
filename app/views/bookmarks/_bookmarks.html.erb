@@ -1,4 +1,4 @@
-<table>
+<table class="features-table">
   <tr>
     <th><<%= sortable "tag" -%></th>
     <th><<%= sortable "title" -%></th>
@@ -10,7 +10,7 @@
 
   <tfoot id="bookmark-template">
     <% @bookmarks.each do |bookmark| %>
-      <tr>
+      <tr class="bookmark">
         <td><%= bookmark.tag %></td>
         <td><%= link_to bookmark.title, bookmark.url, :target => '_blank' %></td>
         <td><%= bookmark.description %></td>
