@@ -1,0 +1,7 @@
+<ul data-role="listview" data-inset="row" data-theme="c" data-dividertheme="b">
+  <li data-role="list-divider">your bookmarks</li>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= link_to bookmark.title, bookmark.url, :target => '_blank' %></li>
+  <% end %>
+</ul>
+
