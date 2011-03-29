@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :adjust_format_for_iphone
