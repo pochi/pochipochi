@@ -3,6 +3,11 @@
 </div>
 
 <div data-role="content">
+  <%= form_tag '/bookmarks.iphone', :method => 'get', :id => 'bookmarks_search' do %>
+    <%= text_field_tag(:search, params[:serach], :size=>30) %>
+    <%= submit_tag "Search", :name => nil, 'data-role'=>:button, 'data-icon'=>:search, 'data-inline'=>:true %>
+  <% end %>
+
   <%= render 'bookmarks' %>
 </div>
 

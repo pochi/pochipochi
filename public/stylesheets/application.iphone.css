@@ -1,0 +1,5 @@
+input.iphone {
+  data-role: button;
+  data-icon: search;
+  data-inline: true;
+}
