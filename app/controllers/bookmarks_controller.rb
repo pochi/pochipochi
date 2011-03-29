@@ -11,6 +11,7 @@ class BookmarksController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @bookmarks }
       format.js   { render :json => @bookmarks.to_json }
+      format.iphone # index.iphone.erb
     end
   end
 
